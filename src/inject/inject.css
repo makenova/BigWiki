@@ -1,0 +1,25 @@
+#mw-head-base {
+	height:0px !important;
+	visibility:hidden !important;
+}
+#mw-navigation {
+	visibility:hidden !important;
+}
+#content {
+	width:96% !important;
+	margin-left:2px !important;
+}
+
+#searchform {
+	position: absolute;
+   top: 5px;
+   right: 12px;
+}
+
+/*#searchInput {
+	position:absolute;
+	top:5px;
+	right:5px;
+	width:25em;
+	height:1.4em;
+}*/

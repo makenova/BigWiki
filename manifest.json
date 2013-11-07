@@ -1,0 +1,43 @@
+{
+  "name": "BigWiki",
+  "version": "0.0.1",
+  "manifest_version": 2,
+  "description": "Big Wiki displays just the meat of wikipedia articles.",
+  "homepage_url": "http://makenova.com/projects/bigwiki.html",
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "256": "icons/icon256.png"
+  },
+  "default_locale": "en",
+  "background": {
+    "scripts": [ "src/bg/background.js" ],
+    "persistent": false
+  },
+  "page_action": {
+    "default_icon": "icons/icon16.png",
+    "default_title": "Big Wiki!!",
+    "default_popup": "src/page_action/page_action.html"
+  },
+  "permissions": [
+    "http://en.wikipedia.org/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "http://en.wikipedia.org/*"
+      ],
+      "css": [
+        "src/inject/inject.css"
+      ]
+    },
+    {
+      "matches": [
+        "http://en.wikipedia.org/*"
+      ],
+      "js": [
+        "src/inject/inject.js"
+      ]
+    }
+  ]
+}
