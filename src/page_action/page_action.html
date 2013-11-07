@@ -1,17 +1,23 @@
 <!doctype html>
 <style type="text/css">
 	#mainPopup {
-		padding: 10px;
-		height: 150px;
-		width: 400px;
+		height: 110px;
+		width: 160px;
 		font-family: Helvetica, Ubuntu, Arial, sans-serif;
+		text-align: center;
 	}
 	h1 {
 		font-size: 2em;
+		font-family: Garamond, Georgia, serif;
 	}
 </style>
 
 <div id="mainPopup">
 <h1>Big Wiki!</h1>
-<p>Big Wiki gets rid of all the fluff that surrounds wikipedia articles and lets you focus on the meaty article.</p>
+<form id="big-switch">
+	<label for="wiki-on">On</label>
+	<input type="radio" id="wiki-on" name="wiki-on-off">
+	<label for="wiki-off">Off</label>
+	<input type="radio" id="wiki-off" name="wiki-on-off">
+</form>
 </div>
