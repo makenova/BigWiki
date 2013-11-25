@@ -16,7 +16,7 @@
   },
   "page_action": {
     "default_icon": "icons/icon16.png",
-    "default_title": "Big Wiki!!",
+    "default_title": "Big Wiki",
     "default_popup": "src/page_action/page_action.html"
   },
   "permissions": [
@@ -24,20 +24,9 @@
   ],
   "content_scripts": [
     {
-      "matches": [
-        "http://*.wikipedia.org/*"
-      ],
-      "css": [
-        "src/inject/inject.css"
-      ]
-    },
-    {
-      "matches": [
-        "http://*.wikipedia.org/*"
-      ],
-      "js": [
-        "src/inject/inject.js"
-      ]
+      "matches": [ "*://*.wikipedia.org/*" ],
+      "css": [ "src/inject/inject.css" ],
+      "js": [ "src/inject/inject.js" ]
     }
   ]
 }

@@ -6,12 +6,29 @@
 	visibility:hidden !important;
 }
 #content {
-	width:96% !important;
+	width:94% !important;
 	margin-left:2px !important;
+	min-width: 400px;
 }
 
 #searchform {
 	position: absolute;
    top: 5px;
    right: 12px;
+}
+
+#searchform input[type=text]{
+	font-size: 1em !important;
+}
+
+#searchInput {
+	font-size: inherit !important;
+}
+
+.suggestions {
+	font-size: inherit !important;
+}
+
+body {
+	font-size: 1.7em !important;
 }
