@@ -13,11 +13,11 @@ chrome.extension.sendMessage({}, function(response) {
 chrome.runtime.onMessage.addListener(
   function(request, sender, sendResponse) {
     if (request.bigWikiON === true){
-    	bigWikify(true);
-    	sendResponse({message: "bigWikiON"});
+			bigWikify(true);
+			sendResponse({message: "bigWikiON"});
     } else {
-    	bigWikify(false);
-    	sendResponse({message: "bigWikiOFF"});
+			bigWikify(false);
+			sendResponse({message: "bigWikiOFF"});
     }
   });
 

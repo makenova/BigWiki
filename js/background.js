@@ -1,0 +1,1 @@
+chrome.extension.onMessage.addListener(function(e,n,o){chrome.pageAction.show(n.tab.id),o()});
