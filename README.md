@@ -13,11 +13,13 @@ This is a chrome extension, the easiest way to install it is to Download [BigWik
 If you wish to make edits to the source,  
 
 1. Download this repo and make your changes in the [`src`](https://github.com/makenova/BigWiki/tree/master/src) folder
-2. Run [gulp](https://github.com/gulpjs/gulp)([node](http://nodejs.org/) required)
-3. Execute the `build.sh` script (tested on *inx only)
+2. Run [`gulp`](https://github.com/gulpjs/gulp)( [`node`](http://nodejs.org/) required)
+3. Runt `gulp dist`, it will execute the [`build.sh`](https://github.com/makenova/BigWiki/blob/master/build.sh) script (tested on *inx only)
 4. Load the [`dist`](https://github.com/makenova/BigWiki/tree/master/dist) folder into chrome as and unpacked extension([instructions](http://developer.chrome.com/extensions/getstarted.html#unpacked)).  
 5. Open a [wikipedia](https://www.wikipedia.org/) article.
 
 Directions
 ----------
-BigWiki is a chrome extension page action and will take effect whenever you are on a wikipedia page. You will know that BigWiki is active by the icon in the address bar. If you need to access some of the elements that BigWiki hides, simply click on the icon in the address bar and select the off option.
+BigWiki is a chrome extension page action and will take effect whenever you are on a wikipedia page. You will know that BigWiki is active by the icon in the address bar. If you need to access some of the elements that BigWiki hides, simply click on the icon in the address bar and select the off option.  
+
+![BigWiki GIF](http://i.imgur.com/1X7wuOl.gif "BigWiki Directions")
