@@ -1,34 +1,36 @@
-#mw-head-base {
+/* bigWiki css contentscript */
+#mw-head-base.bigWiki {
 	height:0px !important;
 	visibility:hidden !important;
 }
-#mw-navigation {
+#mw-navigation.bigWiki {
 	visibility:hidden !important;
 }
-#content {
+#content.bigWiki {
 	width:94% !important;
 	margin-left:2px !important;
 	min-width: 400px;
 }
 
-#searchform {
+#searchform.bigWiki {
 	position: absolute;
-   top: 5px;
-   right: 12px;
+	top: 5px;
+	right: 12px;
+	visibility: visible;
 }
 
-#searchform input[type=text]{
+#searchform.bigWiki input[type=text]{
 	font-size: 1em !important;
 }
 
-#searchInput {
+#searchInput.bigWiki {
 	font-size: inherit !important;
 }
 
-.suggestions {
+.suggestions.bigWiki {
 	font-size: inherit !important;
 }
 
-body {
+body.bigWiki {
 	font-size: 1.7em !important;
 }
