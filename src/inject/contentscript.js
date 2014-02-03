@@ -12,15 +12,10 @@ chrome.extension.sendMessage({}, function(response) {
 
 chrome.runtime.onMessage.addListener(
   function(request, sender, sendResponse) {
-    console.log(sender.tab ?
-                "from a content script:" + sender.tab.url :
-                "from the extension");
     if (request.bigWikiON === true){
-    	console.log('ON');
     	bigWikify(true);
     	sendResponse({message: "bigWikiON"});
     } else {
-    	console.log('OFF');
     	bigWikify(false);
     	sendResponse({message: "bigWikiOFF"});
     }
