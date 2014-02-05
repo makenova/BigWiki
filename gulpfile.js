@@ -5,24 +5,25 @@ var gulp = require('gulp'),
     jshint = require('gulp-jshint'),
     minifycss = require('gulp-minify-css'),
     stylish = require('jshint-stylish'),
-    exec = require('child_process').exec;
+    clean = require('gulp-clean');
 
 var paths = {
   scripts: ['src/bg/*.js','src/inject/*.js','src/page_action/*.js'],
-  styles: ['src/inject/contentscript.less']
+  styles: ['src/inject/contentscript.less'],
+  dist: ['./src/_locales/**/*', './src/icons/**/*', './src/page_action/**/*', './src/manifest.json']
 };
 
 gulp.task('less', function () {
   gulp.src(paths.styles)
     .pipe(less())
     .pipe(minifycss())
-    .pipe(gulp.dest('./css'));
+    .pipe(gulp.dest('./dist/css'));
 });
 
 gulp.task('ugly', function() {
   gulp.src(paths.scripts)
     .pipe(uglify())
-    .pipe(gulp.dest('./js'));
+    .pipe(gulp.dest('./dist/js'));
 });
 
 gulp.task('lint', function() {
@@ -37,14 +38,15 @@ gulp.task('watch', function () {
   gulp.watch(paths.scripts, ['ugly']);
 });
 
-gulp.task('dist', function(){
-  child = exec('./build.sh', function(error, stdout, stderr){
-    console.log('stdout: ' + stdout);
-    console.log('stderr: ' + stderr);
-    if (error !== null) {
-      console.log('exec error: ' + error);
-    }
-  });
+gulp.task('clean', function(){
+  return gulp.src(['dist/*'], {read:false})
+  .pipe(clean());
+});
+
+gulp.task('move',['clean', 'lint', 'less', 'ugly'], function(){
+  gulp.src(paths.dist, {base:'./src'})
+  .pipe(gulp.dest('dist'));
 });
 
 gulp.task('default', ['lint', 'less', 'ugly', 'watch']);
+gulp.task('dist', ['move']);
